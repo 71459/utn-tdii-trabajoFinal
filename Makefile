@@ -1,8 +1,8 @@
-CC   := gcc
-AR   := ar
-FIND := find . -type f -name
+CC := gcc
+AR := ar
+RM := find . -type f -name
 
-EXE := tfx
+EXE := tfx.elf
 SRC :=  $(wildcard libs/EasyPIO/*.c) \
 	$(wildcard libs/tf/*.c) \
       	$(wildcard *.c)
@@ -17,12 +17,13 @@ LDLIBS  := -ltfx -lwiringPi -lm
 
 all: $(EXE)
 
-tfx: $(OBJ) libtfx.a
+tfx.elf: $(OBJ) libtfx.a
 	$(CC) -o $@ $< $(LDFLAGS) $(LDLIBS)
 
 libtfx.a: $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	$(FIND) '*.o' -delete
-	$(FIND) '*.a' -delete
+	$(RM) '*.o' -delete
+	$(RM) '*.a' -delete
+	$(RM) '*.elf' -delete
