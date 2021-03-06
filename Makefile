@@ -2,7 +2,7 @@ CC := gcc
 AR := ar
 RM := find . -type f -name
 
-EXE := tfx.elf
+EXE := trabajoFinal.elf
 SRC :=  $(wildcard libs/EasyPIO/*.c) \
 	$(wildcard libs/tf/*.c) \
       	$(wildcard *.c)
@@ -11,16 +11,16 @@ OBJ := $(SRC:.c=.o)
 CFLAGS  := -c -g -Wall -Werror -Ilibs/EasyPIO -Ilibs/tf
 ARFLAGS := -rcs
 LDFLAGS := -g -L. -nostartfiles 
-LDLIBS  := -ltfx -lwiringPi -lm
+LDLIBS  := -ltf -lwiringPi -lm
 
 .PHONY: clean
 
 all: $(EXE)
 
-tfx.elf: $(OBJ) libtfx.a
+trabajoFinal.elf: $(OBJ) libtf.a
 	$(CC) -o $@ $< $(LDFLAGS) $(LDLIBS)
 
-libtfx.a: $(OBJ)
+libtf.a: $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean:
