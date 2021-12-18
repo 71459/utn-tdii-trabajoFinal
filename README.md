@@ -1,6 +1,8 @@
 # utn-frc-tdii-trabajoFinal
 
 			Trabajo Práctico Final - Técnicas Digitales II
+			
+#
 
 				====== EJERCICIOS ======
 
@@ -101,6 +103,10 @@ secuencias realizando el ajuste de los potenciómetros.
 
 				====== SECUENCIAS DE LUCES ======
 
+La técnica de tabla de datos consiste en simplemente un bucle de programa que saca por los 
+puertos de salida el contenido de una tabla preestablecida con valores que reproducen la 
+secuencia deseada.
+
 1. Auto Fantástico: una luz que se desplaza de izquierda a derecha y de derecha a izquierda.
 
 2. El Choque: una luz desde la izquierda y otra desde la derecha comienzan su recorrido en 
@@ -118,7 +124,3 @@ los ocho lugares han sido ocupados de la forma descripta.
 4. La Carrera: Una luz arranca por la izquierda a una determinada velocidad, y cuando va por 
 la mitad del recorrido arranca una nueva luz por la izquierda pero al doble de velocidad lo 
 que produce que arriben al extremo derecho al mismo tiempo.
-
-La técnica de tabla de datos consiste en simplemente un bucle de programa que saca por los 
-puertos de salida el contenido de una tabla preestablecida con valores que reproducen la 
-secuencia deseada.
